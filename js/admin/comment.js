@@ -33,10 +33,10 @@ async function fetchDatas() {
 
 fetchDatas();
 
-function RenderData(obj) {
-    console.log(obj);
+function RenderData(item) {
+ 
 
-    const filteredData = obj.data.map(item => {
+    const filteredData = item.data.map(item => {
          const formattedDate = new Date(item.created_at).toLocaleDateString("en-GB", {
       day: "2-digit",
       month: "short",

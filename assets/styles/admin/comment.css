@@ -38,6 +38,13 @@ main {
 
 
 
+
+.comment-text{
+  text-align: left;
+
+}
+
+
 .table td,
 .table th {
     vertical-align: middle;
