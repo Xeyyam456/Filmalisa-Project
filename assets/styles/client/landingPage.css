@@ -1,5 +1,5 @@
 body {
-    background-image: url(../img/landingPageBack.svg);
+    background-image: url(../../images/landingPageBack.svg);
     background-repeat: no-repeat;
     background-position: center top;
     font-family: var(--font-primary);
@@ -15,6 +15,8 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    /* height: 100vh; */
+    /* overflow-x: scroll; */
 }
 
 /* ── NAV ── */
@@ -62,9 +64,7 @@ nav .logo-div {
 }
 
 
-main{
-    overflow: hidden;
-}
+
 
 .content {
     text-align: center;

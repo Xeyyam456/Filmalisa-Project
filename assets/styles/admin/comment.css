@@ -13,6 +13,10 @@ main {
     flex: 1;
     min-width: 0;
     /* overflow/eni problemi olmasın */
+      height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .table {
