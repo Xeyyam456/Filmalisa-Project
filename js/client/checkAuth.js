@@ -17,7 +17,7 @@ function checkAuth() {
 
     // 2. Əgər token VARSA və istifadəçi yenidən Login/Register-ə girmək istəyirsə -> Profilə at
     if (token && isAuthPage) {
-        window.location.replace("../pages/profile.html"); 
+        window.location.replace("../pages/home.html"); 
     }
 }
 
