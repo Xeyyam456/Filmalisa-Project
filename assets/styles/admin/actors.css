@@ -35,6 +35,12 @@ main {
     font-size: 1.1rem;
 }
 
+
+.operation i:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
 .operation i:first-child {
     margin-right: 15px;
     color: #28a745;
@@ -176,3 +182,5 @@ dialog:not([open]) {
     border-radius: 6px;
     cursor: pointer;
 }
+
+

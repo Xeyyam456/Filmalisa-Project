@@ -3,10 +3,12 @@ body {
     font-family: 'Raleway', sans-serif !important;
 }
 
+
+
 .categories-container {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 main {
@@ -17,7 +19,7 @@ main {
 /* TABLE SECTION */
 .section {
     padding: 0 24px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .table {
@@ -221,20 +223,3 @@ main {
     color: white !important;
 }
 
-/* SIDEBAR & HEADER DÜZƏLİŞLƏR */
-.lowerAside {
-    margin-bottom: 20px;
-    padding: 0 20px;
-}
-
-.logout-text {
-    font-size: 16px;
-    color: #9ca3af;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.logout-text:hover {
-    color: #ff6b6b;
-}
