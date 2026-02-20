@@ -61,6 +61,11 @@ nav .logo-div {
     /* border-bottom: 6px solid grey; */
 }
 
+
+main{
+    overflow: hidden;
+}
+
 .content {
     text-align: center;
     display: flex;

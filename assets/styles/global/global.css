@@ -90,20 +90,31 @@ a{
 .logout-text {
     margin: 0;
     font-size: 14px;
-    /* color: inherit; */
+    color: inherit;
 }
 
 .lowerAside img {
     width: 18px;
     height: 18px;
-    /* transition: filter 0.35s ease; */
-    /* color: var(--sidebar-text-color); */
+    transition: filter 0.35s ease;
+    color: var(--sidebar-text-color);
+
+   
 }
 
 .lowerAside:hover {
     background-color: var(--sidebar-card-color);
-    color: #fff;
+    color: var(--card-number-color);
 }
+
+main{
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
 
 
 
@@ -120,6 +131,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 
@@ -158,6 +170,9 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 30px 116px 70px 24px;
+    /* position: fixed; */
+
+
     width: calc(100vw - 250px);
     background-color: var(--bg-color);
 }

@@ -18,6 +18,8 @@ main {
 }
 
 
+
+
 .table {
     border-radius: 8px;
     overflow: hidden;
@@ -46,7 +48,9 @@ main {
 }
 
 
-
+.operation  i:hover{
+    transform: scale(1.1);
+}
 
 
 
@@ -117,3 +121,31 @@ main {
     background: #dc2626;
 }
 
+
+
+
+
+
+
+
+
+/* ===========================================
+   MODAL BACKDROP (BLUR & DARK)
+=========================================== */
+
+/* Modal açılarkən arxa fonun dizaynı */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.8) !important; 
+    backdrop-filter: blur(8px) !important;        
+    -webkit-backdrop-filter: blur(8px) !important; 
+    opacity: 1 !important;                        
+}
+.modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Modalın ekrana gəlmə sürəti və effekti */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}

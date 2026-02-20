@@ -44,7 +44,6 @@ function RenderData(obj) {
     });
         return(`   <tr class="table-row"> 
         <td class="comment-user">
-                    <img src="../../assets/img/adminman.svg" alt="user" />
                     <span>${item.user.full_name}</span>
                   </td>
 
