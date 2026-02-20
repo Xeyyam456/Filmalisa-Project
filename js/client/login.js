@@ -1,74 +1,69 @@
-// 1. SƏHİFƏ YÜKLƏNƏNDƏ TOKEN YOXLANIŞI: 
-// Əgər token varsa, birbaşa home.html-ə yönləndir
-if (localStorage.getItem("access_token")) {
-  window.location.href = "./home.html"; 
-  
+// login.js
+
+// 1. SƏHİFƏ YÜKLƏNƏNDƏ: Əgər token varsa, birbaşa home-a keç
+if (localStorage.getItem("user_token")) {
+    window.location.href = "home.html"; 
 }
 
-const toggle = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
-const warningEl = document.getElementById("warning");
 const loginUrl = "https://api.sarkhanrahimli.dev/api/filmalisa/auth/login";
-const form = document.getElementById("loginForm"); 
+const loginForm = document.getElementById("loginForm");
+const warningEl = document.getElementById("warning");
 
-// Şifrəni göstər/gizlət məntiqi
-toggle.addEventListener("click", () => {
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-});
-
-// Xəta mesajını göstərmək üçün funksiya
+// Xəta göstərmə funksiyası
 function showWarning(text) {
-  if (warningEl) {
-    warningEl.textContent = text;
-    warningEl.style.display = "block";
-  } else {
-    alert(text); // Əgər HTML-də warning id-si unudulubsa, ekrana xəbərdarlıq çıxarsın
-  }
+    if (warningEl) {
+        warningEl.textContent = text;
+        warningEl.style.display = "block";
+    } else {
+        alert(text);
+    }
 }
 
-// Login funksiyası
 async function login(event) {
-  event.preventDefault();
-  
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-
-  if (!email || !password) {
-    showWarning("Email və şifrə boş ola bilməz");
-    return;
-  }
-
-  const options = {
-    method: "POST",
-    headers: {  
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  };
-
-  try {
-    const response = await fetch(loginUrl, options);
-    const responseData = await response.json();
+    event.preventDefault();
     
-    // API-dən xəta gələrsə
-    if (!responseData.result && !response.ok) {
-      showWarning(responseData.message || "İstifadəçi adı və ya şifrə yanlışdır.");
-      return;
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+        showWarning("Email və şifrəni daxil edin.");
+        return;
     }
 
-    // Uğurlu giriş: Tokeni al və yadda saxla
-    const accessToken = responseData.data.tokens.access_token;
-    localStorage.setItem("login_token", accessToken);
-    
-    window.location.href = "./home.html"; 
+    const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+    };
 
-  } catch (error) {
-    showWarning("Server xətası, zəhmət olmasa daha sonra yenidən cəhd edin.");
-    console.error(error);
-  }
+    try {
+        const response = await fetch(loginUrl, options);
+        const responseData = await response.json();
+        
+        console.log("API-dən gələn cavab:", responseData); // Bunu konsolda yoxla
+
+        if (!response.ok) {
+            showWarning(responseData.message || "Email və ya şifrə yanlışdır.");
+            return;
+        }
+
+        // Tokeni yadda saxla (API strukturuna diqqət: data.tokens.access_token)
+        if (responseData.data && responseData.data.tokens && responseData.data.tokens.access_token) {
+            const accessToken = responseData.data.tokens.access_token;
+            localStorage.setItem("user_token", accessToken);
+            
+            console.log("Token uğurla saxlanıldı. Home-a yönləndirilir...");
+            window.location.href = "home.html"; 
+        } else {
+            showWarning("Token alınmadı. API cavabını yoxlayın.");
+        }
+
+    } catch (error) {
+        console.error("Xəta baş verdi:", error);
+        showWarning("Serverlə əlaqə kəsildi.");
+    }
 }
 
-form.addEventListener("submit", login);
-
-
-
+if (loginForm) {
+    loginForm.addEventListener("submit", login);
+}

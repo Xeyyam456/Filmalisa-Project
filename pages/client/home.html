@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="az">
   <head>
+    <script src="../../js/client/checkAuth.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
@@ -23,31 +24,33 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../../assets/css/global/variables.css" />
+    <link rel="stylesheet" href="../../assets/styles/global/root-element.css">
+
     <link rel="stylesheet" href="../../assets/css/global/global.css" />
-    <link rel="stylesheet" href="../../assets/css/client/home.css" />
+
+    <link rel="stylesheet" href="../../assets/styles/client/home.css" />
   </head>
   <body>
     <!-- navbar sol hisse -->
     <nav class="menu">
       <a class="menu__item" href="#">
-        <img src="../../assets/img/icon1..svg" class="image" alt="" />
+        <img src="../../assets/images/icon1..svg" class="image" alt="" />
       </a>
 
       <a class="menu__item active" href="./home.html">
-        <img src="../../assets/img/home.icon2.svg" alt="Home" />
+        <img src="../../assets/images/home.icon2.svg" alt="Home" />
       </a>
 
       <a class="menu__item" href="./movies.html">
-        <img src="../../assets/img/home.icon3.svg" alt="Movies" />
+        <img src="../../assets/images/home.icon3.svg" alt="Movies" />
       </a>
 
       <a class="menu__item" href="./series.html">
-        <img src="../../assets/img/home.icon4.svg" alt="Series" />
+        <img src="../../assets/images/home.icon4.svg" alt="Series" />
       </a>
 
       <a class="menu__item" href="./mylist.html">
-        <img src="../../assets/img/home.icon5.svg" alt="My List" />
+        <img src="../../assets/images/home.icon5.svg" alt="My List" />
       </a>
     </nav>
     <!-- navbar sol hisse bitti -->
@@ -56,7 +59,7 @@
       <div class="hero-carousel" id="heroCarousel">
         <!-- əvvəl placeholder -->
         <div class="hero-slide active">
-          <img src="../../assets/img/home.carusel.jpg" alt="" />
+          <img src="../../assets/images/home.carusel.jpg" alt="" />
           <button class="watch-btn">Watch now</button>
         </div>
       </div>
@@ -75,31 +78,31 @@
 
       <div class="action__wrapper" id="actionWrapper">
         <article class="action-card">
-          <img src="../../assets/img/home.film1.jpg" alt="Action movie 1" />
+          <img src="../../assets/images/home.film1.jpg" alt="Action movie 1" />
           <p class="category-name">Fantasy</p>
           <p class="movie-name">Wonder Woman 1984</p>
         </article>
 
         <article class="action-card">
-          <img src="../../assets/img/home.film2.jpg" alt="Action movie 2" />
+          <img src="../../assets/images/home.film2.jpg" alt="Action movie 2" />
           <span class="category-name">Fantasy</span>
           <h3 class="movie-name">Wonder Woman 1984</h3>
         </article>
 
         <article class="action-card">
-          <img src="../../assets/img/home.film3.jpg" alt="Action movie 3" />
+          <img src="../../assets/images/home.film3.jpg" alt="Action movie 3" />
           <span class="category-name">Fantasy</span>
           <h3 class="movie-name">Mortal Kombat</h3>
         </article>
 
         <article class="action-card">
-          <img src="../../assets/img/home.film4.jpg" alt="Action movie 4" />
+          <img src="../../assets/images/home.film4.jpg" alt="Action movie 4" />
           <span class="category-name">Drama</span>
           <h3 class="movie-name">The Courier</h3>
         </article>
 
         <article class="action-card">
-          <img src="../../assets/img/home.film5.jpg" alt="Action movie 5" />
+          <img src="../../assets/images/home.film5.jpg" alt="Action movie 5" />
           <span class="category-name">Action</span>
           <h3 class="movie-name">Thunder Force</h3>
         </article>
@@ -117,19 +120,19 @@
 
       <div class="comedy__wrapper" id="comedyWrapper">
         <article class="comedy-card">
-          <img src="../../assets/img/home.fon1.jpg" alt="Comedy movie 1" />
+          <img src="../../assets/images/home.fon1.jpg" alt="Comedy movie 1" />
           <span class="category-name">Sci-Fi & Fantasy</span>
           <h3 class="movie-name">Game of Thrones</h3>
         </article>
 
         <article class="comedy-card">
-          <img src="../../assets/img/home.fon2.jpg" alt="Comedy movie 2" />
+          <img src="../../assets/images/home.fon2.jpg" alt="Comedy movie 2" />
           <span class="category-name">Sci-Fi & Fantasy</span>
           <h3 class="movie-name">The Falcon and the Winter Soldier</h3>
         </article>
 
         <article class="comedy-card">
-          <img src="../../assets/img/home.fon3.png" alt="Comedy movie 3" />
+          <img src="../../assets/images/home.fon3.png" alt="Comedy movie 3" />
           <span class="category-name">Sci-Fi & Fantasy</span>
           <h3 class="movie-name">WandaVisionGame of Thrones</h3>
         </article>
@@ -147,6 +150,6 @@
     </div>
 
     <script src="../../assets/js/client/home.js"></script>
-    <script src="../../assets/js/client/checkAuth.js"></script>
+    <!-- <script src="../../assets/js/client/checkAuth.js"></script> -->
   </body>
 </html>
