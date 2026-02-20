@@ -2,25 +2,24 @@
 
 :root {
   --font-primary: 'Raleway', sans-serif;
-  
-  --primary-color: #9B51E0; /* Purple main color */
-  --text-placeholder: #475069; /* Admin inputların placeholder (daxili) rəngi */
-  --bg-color: rgba(23, 22, 22, 1);/* Background rəngi */
-      --sidebar-bg: rgba(30, 30, 30, 1); /* sidebar background */
-  --sidebar-text-color: #AEAEAE; /* Sidebar-da elementlərin mətni rəngi */
-  --card-number-color: #FFFFFF; /* Card-ların içindəki rəqəmlərin rəngi */
-  --input-bg-color: #323B54; /* Create/Update modal-larda inputların background rəngi */
-   --sidebar-card-color: rgba(88, 32, 157, 1); /* sidebar card hover rengi */
-    --card-bg: rgba(45, 45, 45, 1);        /* boz card */
-  --card-bg-purple: rgba(101, 47, 141, 1); /* purple card */
+
+  --primary-color: #9B51E0;
+  --border-color: #808080;
+
+  --bg-color: rgba(23, 22, 22, 1);
+  --detail-page-bg: rgba(29, 29, 29, 1);
+  --sidebar-bg: rgba(30, 30, 30, 1);
+  --input-bg-color: #323B54;
+
+  --sidebar-text-color: #AEAEAE;
   --header-name-color: #CCCCCC;
   --landing-page-logo-color: #C3C8D4;
-  --border-color: #808080;
   --input-text-color: #BCBCBC;
-  --detail-page-bg: rgba(29, 29, 29, 1);
+  --card-number-color: #FFFFFF;
+  --text-placeholder: #475069;
 
-  
-
-  /*admin hisse rengler */
+  --card-bg: rgba(45, 45, 45, 1);
+  --card-bg-purple: rgba(101, 47, 141, 1);
+  --sidebar-card-color: rgba(88, 32, 157, 1);
 }
 
