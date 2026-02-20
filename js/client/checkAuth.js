@@ -1,19 +1,32 @@
+// js/client/checkAuth.js
 
 function checkAuth() {
-  const token = localStorage.getItem("access_token");
-  
-  // Əgər token yoxdursa (kimsə birbaşa linklə girməyə çalışırsa), loginə at
-  if (!token) {
-    window.location.replace("./login.html"); // Və ya tam yol: "/gapes/client/login.html"
-  }
+    const token = localStorage.getItem("user_token");
+    const isAuthPage = window.location.pathname.includes("login.html") || 
+                       window.location.pathname.includes("register.html");
+
+    // Əgər token yoxdursa və login/register səhifəsində deyilsə -> Logine at
+    if (!token && !isAuthPage) {
+        window.location.href = "login.html";
+    }
 }
 
-// Səhifə yüklənəndə yoxla
 checkAuth();
 
-// Əlavə qoruma: Başqa tabda token silinərsə
+// Token silinən kimi (məsələn logout və ya əllə silmə) dərhal reaksiya vermək üçün
 window.addEventListener('storage', (event) => {
-  if (event.key === 'access_token' && !event.newValue) {
-    window.location.replace("./login.html");
-  }
+    if (event.key === 'user_token' && !event.newValue) {
+        window.location.href = "login.html";
+    }
 });
+
+// Ən qəti həll: Hər saniyə gizli yoxlama
+setInterval(() => {
+    const token = localStorage.getItem("user_token");
+    const isAuthPage = window.location.pathname.includes("login.html") || 
+                       window.location.pathname.includes("register.html");
+                       
+    if (!token && !isAuthPage) {
+        window.location.href = "login.html";
+    }
+}, 500); // Daha sürətli reaksiya üçün 500ms
