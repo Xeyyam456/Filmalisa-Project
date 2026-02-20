@@ -1,0 +1,31 @@
+.user-container{
+    display: flex;
+ 
+}
+
+main {
+    background-color: var(--bg-color);
+}
+
+
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 90%;
+    margin: 24px;
+
+
+
+}
+
+
+
+.table td,
+.table th {
+    vertical-align: middle;
+    height: 60px;
+}
+
+
